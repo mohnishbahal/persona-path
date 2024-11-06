@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-50: 239 246 255;
+    --color-primary-100: 219 234 254;
+    --color-primary-200: 191 219 254;
+    --color-primary-300: 147 197 253;
+    --color-primary-400: 96 165 250;
+    --color-primary-500: 59 130 246;
+    --color-primary-600: 37 99 235;
+    --color-primary-700: 29 78 216;
+    --color-primary-800: 30 64 175;
+    --color-primary-900: 30 58 138;
+  }
+
+  .dark {
+    --color-primary-50: 30 58 138;
+    --color-primary-100: 30 64 175;
+    --color-primary-200: 29 78 216;
+    --color-primary-300: 37 99 235;
+    --color-primary-400: 59 130 246;
+    --color-primary-500: 96 165 250;
+    --color-primary-600: 147 197 253;
+    --color-primary-700: 191 219 254;
+    --color-primary-800: 219 234 254;
+    --color-primary-900: 239 246 255;
+  }
+
+  body {
+    @apply antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-offset-gray-900;
+  }
+
+  .input-base {
+    @apply block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:border-primary-500 focus:ring-primary-500;
+  }
+
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 focus:ring-primary-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500;
+}
